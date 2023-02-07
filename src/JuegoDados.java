@@ -37,7 +37,7 @@ public class JuegoDados {
     }
 
     public static void main(String[] args) {
-        int numDados = 50; //número de dados que se tiran, hilos que se crearan
+        int numDados = 10; //número de dados que se tiran, hilos que se crearan
         int[] resultados = tiraDados(numDados); //devuelve un array de enteros con el resultado de cada dado
         for (int i = 0; i < numDados; i++) {
             System.out.println("Con el dado " + (i + 1) + " ha salido el número: " + resultados[i]);
