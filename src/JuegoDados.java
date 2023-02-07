@@ -36,10 +36,10 @@ public class JuegoDados {
     }
 
     public static void main(String[] args) {
-        int numDados = 3;
+        int numDados = 10;
         int[] resultados = tiraDados(numDados);
         for (int i = 0; i < numDados; i++) {
-            System.out.println("Resultado del dado " + (i + 1) + ": " + resultados[i]);
+            System.out.println("Con el dado " + (i + 1) + " ha salido el número: " + resultados[i]);
         }
     }
 }
