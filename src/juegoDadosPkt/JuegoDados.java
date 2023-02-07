@@ -1,3 +1,5 @@
+package juegoDadosPkt;
+
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -7,8 +9,7 @@ import java.util.Random;
 public class JuegoDados {
 
     public static int[] tiraDados(int numDados) {
-        //En lugar de crear procesos creamos un pool de tantos hilos como dados necesitemos
-        //así será más ágil
+        //creamos un pool de tantos hilos como dados necesitemos
         ExecutorService executor = Executors.newFixedThreadPool(numDados);
         int[] resultados = new int[numDados];
         Future<Integer>[] futures = new Future[numDados];
