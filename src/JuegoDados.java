@@ -7,6 +7,8 @@ import java.util.Random;
 public class JuegoDados {
 
     public static int[] tiraDados(int numDados) {
+        //En lugar de crear procesos creamos un pool de tantos hilos como dados necesitemos
+        //así será más ágil
         ExecutorService executor = Executors.newFixedThreadPool(numDados);
         int[] resultados = new int[numDados];
         Future<Integer>[] futures = new Future[numDados];
@@ -35,8 +37,8 @@ public class JuegoDados {
     }
 
     public static void main(String[] args) {
-        int numDados = 10;
-        int[] resultados = tiraDados(numDados);
+        int numDados = 50; //número de dados que se tiran, hilos que se crearan
+        int[] resultados = tiraDados(numDados); //devuelve un array de enteros con el resultado de cada dado
         for (int i = 0; i < numDados; i++) {
             System.out.println("Con el dado " + (i + 1) + " ha salido el número: " + resultados[i]);
         }
