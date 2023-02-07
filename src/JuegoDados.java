@@ -12,13 +12,12 @@ public class JuegoDados {
         Future<Integer>[] futures = new Future[numDados];
 
         for (int i = 0; i < numDados; i++) {
-            int index = i;
+            //int index = i;
             futures[i] = executor.submit(new Callable<Integer>() {
                 @Override
                 public Integer call() throws Exception {
                     Random rand = new Random();
-                    int resultado = rand.nextInt(6) + 1;
-                    return resultado;
+                    return rand.nextInt(6) + 1;
                 }
             });
         }
